@@ -2,8 +2,8 @@ name: GitHub Pages
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches: [ main ]
+  push:
+    branches: [ main ]
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
     - name: Build Svelte with Vite
       run: nr build
     - name: Deploy to GitHub 
-      uses: actions/upload-pages-artifact@v1
+      uses: actions/upload-pages-artifact@v2
       with:
         path: dist
 
@@ -36,4 +36,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
